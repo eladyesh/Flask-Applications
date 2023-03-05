@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Todo List App{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-5">
+            <h1 class="text-center mb-4">Todo List</h1>
+            <form action="{{ url_for('add') }}" method="POST">
+                <div class="form-group">
+                    <label for="new-todo">New Todo:</label>
+                    <input type="text" class="form-control" id="new-todo" name="new-todo" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Todo</button>
+            </form>
+            <hr>
+            {% if todos %}
+            <ul class="list-group">
+                {% for todo in todos %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ todo.text }}
+                    <form action="{{ url_for('delete', todo_id=todo.id) }}" method="POST">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="text-center">No todos yet. Add one above!</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
