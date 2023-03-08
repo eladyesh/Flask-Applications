@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Password Manager - Register</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f1f1f1;
+		}
+		.container {
+			width: 40%;
+			margin: auto;
+			text-align: center;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			border-radius: 10px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		h1 {
+			color: #333;
+			font-weight: bold;
+			margin-top: 0;
+		}
+		form {
+			display: inline-block;
+			text-align: left;
+		}
+		input[type=text], input[type=password] {
+			padding: 10px;
+			margin: 10px;
+			border: none;
+			border-radius: 5px;
+			background-color: #f1f1f1;
+			width: 100%;
+		}
+		input[type=submit] {
+			display: inline-block;
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			margin: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			text-decoration: none;
+		}
+		input[type=submit]:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Register</h1>
+		<form method="POST">
+			{{ form.hidden_tag() }}
+			<div>
+				<label for="email">Email:</label>
+				<input type="text" id="email" name="email" placeholder="Enter your email" required>
+			</div>
+			<div>
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" placeholder="Enter your password" required>
+			</div>
+			<div>
+				<label for="confirm_password">Confirm Password:</label>
+				<input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+			</div>
+			<div>
+				<input type="submit" value="Register">
+			</div>
+		</form>
+	</div>
+</body>
+</html>
+

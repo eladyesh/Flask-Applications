@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Password Manager</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f1f1f1;
+		}
+		.container {
+			width: 80%;
+			margin: auto;
+			text-align: center;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			border-radius: 10px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		h1 {
+			color: #333;
+			font-weight: bold;
+			margin-top: 0;
+		}
+		.btn {
+			display: inline-block;
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			margin: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			text-decoration: none;
+		}
+		.btn:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Welcome to the Password Manager!</h1>
+		<a href="{{ url_for('register') }}" class="btn">Register</a>
+		<a href="{{ url_for('login') }}" class="btn">Log In</a>
+	</div>
+</body>
+</html>
