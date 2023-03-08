@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Password Manager - Dashboard</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f1f1f1;
+		}
+		.container {
+			width: 80%;
+			margin: auto;
+			text-align: center;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+			border-radius: 10px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		h1 {
+			color: #333;
+			font-weight: bold;
+			margin-top: 0;
+		}
+		table {
+			border-collapse: collapse;
+			margin: 20px auto;
+			width: 100%;
+			text-align: left;
+		}
+		th, td {
+			padding: 10px;
+			border: 1px solid #ddd;
+		}
+		th {
+			background-color: #f2f2f2;
+			color: #333;
+		}
+		td a {
+			display: inline-block;
+			padding: 5px 10px;
+			background-color: #4CAF50;
+			color: #fff;
+			border-radius: 5px;
+			text-decoration: none;
+		}
+		td a:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Dashboard</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Website</th>
+					<th>Username</th>
+					<th>Password</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for password in passwords %}
+				<tr>
+					<td>{{ password.website }}</td>
+					<td>{{ password.username }}</td>
+					<td>{{ password.password }}</td>
+					<td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<p><a href="{{ url_for('add_password') }}">Add Password</a></p>
+		<p><a href="{{ url_for('logout') }}">Logout</a></p>
+	</div>
+</body>
+</html>
